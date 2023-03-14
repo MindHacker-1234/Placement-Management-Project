@@ -1,0 +1,77 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #studentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 50%;
+  font-size: 1.2em;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+    </style>
+</head>
+<body>
+    <form id="studentForm">
+        <!-- <label for="id">ID:</label>
+        <input type="number" id="id" name="id"><br> -->
+    
+    
+        <label for="studentName">student Name:</label>
+        <input type="text" id="studentName" name="studentName"><br>
+
+        <label for="rollno">rollNumber:</label>
+        <input type="number" id="rollNumber" name="rollNumber"><br>
+      
+        <label for="Email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="presentSemester">presentSemester:</label>
+        <input type="number" id="presentSemester" name="presentSemester"><br>
+
+        <label for="cgpa">cgpa:</label>
+        <input type="number" id="cgpa" name="cgpa"><br>
+
+        <label for="isPlaced">isPlaced:</label>
+        <input type="number" id="isPlaced" name="isPlaced"><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+    <script src="addstudent.js"></script>
+</body>
+</html>

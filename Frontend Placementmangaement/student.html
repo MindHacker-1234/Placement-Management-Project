@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students Applied For Particular Company</title>
+    <style>
+      body {
+        margin-top: 20px;
+      }
+
+      .visit-item {
+        margin-left: 10vw;
+        margin-top: 5px;
+        margin-right: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid black;
+      }
+
+      .col1 {
+        flex: 1;
+        padding-left: 1px;
+        font-weight: bold;
+        padding: 5px;
+      }
+
+      .col2 {
+        flex: 4;
+        width: 40vw;
+        margin-right: 10px;
+        padding: 5px;
+        
+      
+      }
+
+      .col3 {
+        flex: 1;
+        margin-right: 10px;
+      
+        
+      }
+
+      .col4 {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .col6 {
+        flex: 2;
+        font-weight: bold;
+    
+      }
+
+      .col7 {
+        flex: 1;
+        margin-right: 10px;
+       
+      }
+
+      .col8 {
+        flex: 3;
+        margin-right: 10px;
+      
+      }
+
+      .col9 {
+        flex: 1;
+        margin-right: 10px;
+     
+      }
+
+      .col10 {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .student-item {
+        padding: 10px;
+        border: 1px solid black;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .eventsaddition {
+        display: inline-block;
+			padding: 10px 20px;
+            margin-left: 30px;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			margin-right: 10px;
+            margin-left: 80vw;
+    background-color: rosybrown;
+
+}
+.deletestudent {
+    display: flex;
+			padding: 10px 20px;
+            margin-left: 30px;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			margin-right: 10px;
+            margin-left: 80vw;
+            background-color: rosybrown;
+            margin-top: 10px;
+
+}
+.sendemail {
+  display: flex;
+			padding: 10px 20px;
+            margin-left: 30px;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			margin-right: 10px;
+            margin-left: 80vw;
+            background-color: darkgray;
+            margin-top: 10px;
+}
+
+input[type="text"]{
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 30%;
+  font-size: 1.2em;
+  margin-left: 10vw;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+        <h1 style="font-size: 20px; text-align: center;">Company</h1>
+      <div id="visitList"></div>
+      <h1 style="font-size: 20px; text-align: center;">Students List</h1>
+      <input type="text" id="searchInput" placeholder="Search by email">
+       <div class="btn">
+      <button id="addBtn" class="eventsaddition">Add Student</button>
+    </div>
+    
+      <div class="studentcontainer">
+        <div class="student-item">
+        <div class="col9">ID</div>
+        <div class="col6">STUDENTNAME</div>
+        <div class="col7">ROLLNUMBER</div>
+        <div class="col8">EMAIL</div>
+        <div class="col9">CGPA</div>
+        <div class="col9">PRESENTSEMESTER</div>
+        <div class="col10">ISPLACED</div>
+        </div>
+      <div id="studentList"></div>
+      </div>
+    </div>
+    <button id="deleteBtn" class="deletestudent">delete Student</button>
+    <button id="emailBtn" class="sendemail">send email</button>
+  </body>
+  <script src="student.js"></script>
+</html>

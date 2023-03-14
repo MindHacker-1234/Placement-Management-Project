@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .student-item {
+        padding: 10px;
+        border: 1px solid black;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .col6 {
+        flex: 2;
+        font-weight: bold;
+    
+      }
+
+      .col7 {
+        flex: 1;
+        margin-right: 10px;
+       
+      }
+
+      .col8 {
+        flex: 3;
+        margin-right: 10px;
+      
+      }
+
+      .col9 {
+        flex: 1;
+        margin-right: 10px;
+     
+      }
+
+      .col10 {
+        flex: 1;
+        margin-right: 10px;
+      }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 20px; text-align: center;">Eligible Students List</h1>
+    <div class="studentcontainer">
+      <div class="student-item">
+        <div class="col9">ID</div>
+        <div class="col6">STUDENTNAME</div>
+        <div class="col7">ROLLNUMBER</div>
+        <div class="col8">EMAIL</div>
+        <div class="col9">CGPA</div>
+        <div class="col9">PRESENTSEMESTER</div>
+        <div class="col10">ISPLACED</div>
+        </div>
+        <div id="studentList"></div>
+        </div>
+    <script src="studentsList.js"></script>
+</body>
+</html>

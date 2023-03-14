@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+                background-image: url(homeimage.jpg);
+        }
+        .welcome-section {
+  text-align: center;
+  margin-top: 100px;
+  animation: flash 1s ease-in-out, slide-in-left 1.5s ease-in-out;
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  color: white;
+}
+
+/* Style buttons */
+.buttons-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 30px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+  background-color: #444;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.button:nth-child(1) {
+            animation: slide-in-top 1s ease-in-out;
+        }
+
+        .button:nth-child(2) {
+            animation: slide-in-right 1s ease-in-out;
+        }
+
+        .button:nth-child(3) {
+            animation: slide-in-bottom 1s ease-in-out;
+        }
+
+        .button:nth-child(4) {
+            animation: slide-in-left 1s ease-in-out;
+        }
+
+/* Keyframe animations */
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes slide-in-top {
+  from {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+            from {
+                transform: translateX(500px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-bottom {
+            from {
+                transform: translateY(500px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-left {
+            from {
+                transform: translateX(-500px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="welcome-section">
+		<h1>WELCOME TO HIRING GRAD</h1>
+	</div>
+
+	<div class="buttons-section">
+		<a href="dashboard.html" class="button">Dashboard</a>
+		<a href="company.html" class="button">Company</a>
+		<a href="studentsList.html" class="button">Students</a>
+		<a href="visit.html" class="button">Visits</a>
+	</div>
+</body>
+</html>

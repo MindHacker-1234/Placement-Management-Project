@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		body {
+			background-color: aliceblue;
+		}
+       	.row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -15px;
+			margin-top: 30px;
+	
+		}
+		.col-4 {
+			flex: 0 0 33.3333%;
+			max-width: 33.3333%;
+			padding: 0 15px;
+			box-sizing: border-box;
+		}
+		.company-container {
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin-bottom: 15px;
+			text-align: center;
+			border-radius: 10px 10px 10px 10px;
+			width: 30vw;
+			animation-duration: 1s;
+            animation-fill-mode: forwards;
+		}
+		.company-name {
+			font-weight: bold;
+			font-size: 1.5rem;
+			margin-bottom: 5px;
+	        border-bottom: 1px solid darkgray;
+		}
+		.company-description {
+	
+			border-bottom: 1px solid darkgray;
+		
+		}
+		.branches {
+			margin-bottom: 5px;
+			border-bottom: 1px solid darkgray
+		}
+		.placement-officer {
+			font-style: italic;
+		}
+		@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.company-container:nth-child(odd) {
+    animation: slideInFromLeft 0.5s ease-out;
+}
+
+.company-container:nth-child(even) {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+.company-container:nth-child(n+1) {
+    animation: slideInFromLeft 1s 0.1s ease-out;
+}
+
+.company-container:nth-child(n+2) {
+    animation: slideInFromRight 1s 0.1s ease-out;
+}
+
+.company-container:nth-child(n+3) {
+    animation: slideInFromTop 0.5s 0.2s ease-out;
+}
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="company-list">
+		<h1 style="font-size: 20px; text-align: center; color: red">COMPANIES VISTING CAMPUS  FOR PLACEMENT</h1>
+	
+   <script src="company.js"></script>
+
+</body>
+</html>
