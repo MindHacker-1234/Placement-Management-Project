@@ -8,7 +8,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #studentForm {
+      body {
+        background-color: whitesmoke;
+      }
+      #studentForm {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(200, 200, 200, 0.3)
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 1.2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+      
+        /* #studentForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,14 +69,17 @@ label {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"]
+ {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
   width: 50%;
   font-size: 1.2em;
+
 }
+
 
 input[type="submit"] {
   padding: 10px 20px;
@@ -43,7 +93,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #3e8e41;
-}
+} */
     </style>
 </head>
 <body>

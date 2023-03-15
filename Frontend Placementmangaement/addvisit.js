@@ -3,22 +3,51 @@ const visitForm = document.getElementById('visitForm');
 visitForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(visitForm);
-  if (
-    !formData.get('driveId') ||
-    !formData.get('driveName') ||
-    !formData.get('ctc') ||
-    !formData.get('jobProfile') ||
-    !formData.get('scheduleDate') ||
-    !formData.get('companyId') 
-    // !formData.get('companyName') ||
-    // !formData.get('companyDescription') ||
-    // !formData.get('placementOfficer') ||
-    // !formData.get('contact') ||
-    // !formData.get('applicableBranches')
-  ) {
-    alert('Please fill up all details.');
-    return;
-  }
+
+  const driveNameInput = document.getElementById('driveName');
+const ctcInput = document.getElementById('ctc');
+const jobProfileInput = document.getElementById('jobProfile');
+const scheduleDateInput = document.getElementById('scheduleDate');
+const companyIdInput = document.getElementById('companyId');
+
+const driveNameError = document.getElementById('driveNameError');
+const ctcError = document.getElementById('ctcError');
+const jobProfileError = document.getElementById('jobProfileError');
+const scheduleDateError = document.getElementById('scheduleDateError');
+const companyIdError = document.getElementById('companyIdError');
+
+
+driveNameError.textContent = '';
+ctcError.textContent = '';
+jobProfileError.textContent = '';
+scheduleDateError.textContent = '';
+companyIdError.textContent = '';
+
+if (driveNameInput.value.trim() === '') {
+driveNameError.textContent = 'Drive name is required';
+return;
+}
+
+if (isNaN(ctcInput.value) || ctcInput.value.trim() === '') {
+ctcError.textContent = 'CTC must be a number';
+return;
+}
+
+if (jobProfileInput.value.trim() === '') {
+jobProfileError.textContent = 'Job profile is required';
+return;
+}
+
+if (scheduleDateInput.value.trim() === '') {
+scheduleDateError.textContent = 'Schedule date is required';
+return;
+}
+
+if (isNaN(companyIdInput.value) || companyIdInput.value.trim() === '') {
+companyIdError.textContent = 'Company ID must be a number';
+return;
+}
+
   const data = {
     // id: formData.get('id'),
     driveId: formData.get('driveId'),

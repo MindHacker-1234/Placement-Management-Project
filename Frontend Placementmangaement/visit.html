@@ -4,120 +4,232 @@
 	<title>Upcoming and Completed Visits</title>
 	<style>
 		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-		h1 {
-			text-align: center;
-			margin-top: 30px;
-		}
-		.container {
-            max-width: 800px;
-			margin: 0 auto;
-            padding: 20px;
-		}
-		.btn {
-			display: inline-block;
-			padding: 10px 20px;
-            margin-left: 30px;
-			background-color: darkred;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-right: 10px;
-            margin-left: 300px;
-		}
-        .btn1 {
-            display: inline-block;
-			padding: 10px 20px;
-            margin-left: 30vw;
-			background-color: #4CAF50;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-right: 10px;
-        }
-		.btn:hover {
-			background-color: #3e8e41;
-		}
-		/* .table {
-			border-collapse: collapse;
-			width: 100%;
-			margin-top: 30px;
-		}
-		.table th, .table td {
-			border: 1px solid #ddd;
-			padding: 8px;
-			text-align: left;
-		}
-		.table th {
-			background-color: #f2f2f2;
-			color: #333;
-			font-weight: normal;
-		}
-		.table tr:nth-child(even) {
-			background-color: #f2f2f2;
-		} */
-        .visit-item {
-            
-            width: 100vw;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-           justify-content: space-between;
-           margin-bottom: 10px;
-           cursor: pointer;
-           border: 1px solid black;
-           gap: 20px;
+		background-color: #F5F5F5;
+		font-family: Arial, sans-serif;
+	}
+
+	h1 {
+		text-align: center;
+		margin-top: 30px;
+		color: #8B0000;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30px;
+		background-color: #8B0000;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+		margin-left: 300px;
+		transition: all 0.3s ease;
+	}
+
+	.btn:hover {
+		background-color: cornflowerblue;
+	}
+
+	.btn1 {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30vw;
+		background-color: #4CAF50;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+		transition: all 0.3s ease;
+	}
+
+	.btn1:hover {
+		background-color: #8B0000;
+	}
+
+	.eventsaddition {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30px;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+		margin-left: 600px;
+		background-color: burlywood;
+		transition: all 0.3s ease;
 		
-  }
+	}
 
-  .col1 {
-  flex: 1;
-  padding-left: 1px;
-  font-weight: bold;
-  
-}
+	.eventsaddition:hover {
+		background-color: darkorchid;
+	}
 
-.col2 {
-  flex: 6;
-  width: 40vw;
-  margin-right: 10px;
-  
-}
+	.visit-item {
+		padding: 10px;
+		margin-left: 5vw;
+		width: 90vw;
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		cursor: pointer;
+		border: 1px solid black;
+		gap: 20px;
+		background-color: #fff;
+		transition: all 0.3s ease;
+	}
 
-.col3 {
-  flex: 1;
-  margin-right: 10px;
+	.visit-item:hover {
+		background-color: #F5F5F5;
+	}
 
-}
+	.col1 {
+		flex: 1;
+		padding-left: 1px;
+		font-weight: bold;
+	}
 
-.col4 {
-  flex: 3;
-  margin-right: 10px;
-}
-.col-md-4 {
-    margin-top: 10px;
-    margin-left: 45vw;
-} 
-.eventsaddition {
-    display: inline-block;
-			padding: 10px 20px;
-            margin-left: 30px;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-right: 10px;
-            margin-left: 600px;
-    background-color: rosybrown;
-}
-.row {
+	.col2 {
+		flex: 6;
+		width: 40vw;
+		margin-right: 10px;
+	}
 
-    width: 100%;
-    display: flex;
+	.col3 {
+		flex: 1;
+		margin-right: 10px;
+	}
 
-}
+	.col4 {
+		flex: 3;
+		margin-right: 10px;
+	}
+
+	.col-md-4 {
+		margin-top: 10px;
+		margin-left: 45vw;
+	} 
+
+	.row {
+		width: 100%;
+		display: flex;
+	}
+
+	#visitList {
+		margin-top: 50px;
+	}
+	
+
+/* body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #f5f5f5;
+		color: #333;         
+	}
+	
+	.btn:hover, .btn1:hover, .eventsaddition:hover {
+		background-color: #8B0000;
+		cursor: pointer;
+	}
+
+	h1 {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30px;
+		background-color: darkred;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+		margin-left: 300px;
+	}
+
+	.btn1 {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30vw;
+		background-color: #4CAF50;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+	}
+
+	.btn:hover {
+		background-color: #3e8e41;
+	}
+
+	.visit-item {
+		padding: 10px;
+	    margin-left: 5vw;
+		width: 90vw;
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		cursor: pointer;
+		border: 1px solid black;
+		gap: 20px;
+	}
+
+	.col1 {
+		flex: 1;
+		padding-left: 1px;
+		font-weight: bold;
+	}
+
+	.col2 {
+		flex: 6;
+		width: 40vw;
+		margin-right: 10px;
+	}
+
+	.col3 {
+		flex: 1;
+		margin-right: 10px;
+	}
+
+	.col4 {
+		flex: 3;
+		margin-right: 10px;
+	}
+
+	.col-md-4 {
+		margin-top: 10px;
+		margin-left: 45vw;
+	} 
+
+	.eventsaddition {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30px;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+		margin-left: 600px;
+		background-color: rosybrown;
+	}
+
+	.row {
+		width: 100%;
+		display: flex;
+	}  */
 
 	</style>
 </head>
@@ -126,12 +238,22 @@
 		<h1>Upcoming and Completed Events</h1>
     </div>
 		<div class="row">
-			<button class="btn" id="upcomingBtn">Upcoming Events</button>
-			<button class="btn1" id="completedBtn">Completed Events</button>
+			<button class="btn" class="col-md-4" id="upcomingBtn">Upcoming Events</button>
+			<button class="btn1" class="col-md-4" id="completedBtn">Completed Events</button>
         </div>
                   <button id="addBtn" class="eventsaddition">Add Event</button>
+				  <div class="visit-item">
+					<div class="col1">Id</div>
+					  <div class="col1">companyName</div>
+					  <div class="col2">companyDescription</div>
+					  <div class="col3">ctc</div>
+					  <div class="col4">date</div>
+					  <div class="col4">jobProfile</div>
+					</div>
+			</div>
              
         <div id="visitList">
+			<div class="visit-item">
         </div>
 	</div>
     <script src="visit.js"></script>

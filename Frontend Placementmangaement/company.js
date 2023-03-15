@@ -3,6 +3,7 @@ const companyList = document.getElementById("company-list");
 fetch("http://localhost:8080/Placement/company/display")
   .then(response => response.json())
   .then(data => {
+    console.log(data);
     let row = null;
     data.forEach((company, index) => {
       if (index % 3 === 0) { // create new row for every 3rd company
@@ -16,6 +17,10 @@ fetch("http://localhost:8080/Placement/company/display")
 	
       const companyContainer = document.createElement("div");
       companyContainer.classList.add("company-container");
+
+      const companyId = document.createElement("div");
+      companyId.classList.add("company-id")
+      companyId.textContent = company.id;
 
       const companyName = document.createElement("div");
       companyName.classList.add("company-name");
@@ -33,6 +38,7 @@ fetch("http://localhost:8080/Placement/company/display")
       placementOfficer.classList.add("placement-officer");
       placementOfficer.textContent = "Placement Officer: " + company.placementOfficer;
 
+      companyContainer.appendChild(companyId);
       companyContainer.appendChild(companyName);
       companyContainer.appendChild(companyDesc);
       companyContainer.appendChild(branches);

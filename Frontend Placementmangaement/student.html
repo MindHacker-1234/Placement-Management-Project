@@ -6,145 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Students Applied For Particular Company</title>
     <style>
-      body {
-        margin-top: 20px;
-      }
 
-      .visit-item {
-        margin-left: 10vw;
-        margin-top: 5px;
-        margin-right: 10vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid black;
-      }
-
-      .col1 {
-        flex: 1;
-        padding-left: 1px;
-        font-weight: bold;
-        padding: 5px;
-      }
-
-      .col2 {
-        flex: 4;
-        width: 40vw;
-        margin-right: 10px;
-        padding: 5px;
+* {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
         
-      
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 1.2em;
+            background-color: #f2f2f2;
+        }
 
-      .col3 {
-        flex: 1;
-        margin-right: 10px;
-      
+        h1 {
+            margin: 20px 0;
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .visit-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .col1 {
+            flex: 1;
         
-      }
+        }
 
-      .col4 {
-        flex: 1;
-        margin-right: 10px;
-      }
+        .col2 {
+            flex: 4;
+            padding-right: 10px;
+        }
 
-      .col6 {
-        flex: 2;
-        font-weight: bold;
-    
-      }
+        .col3, .col4 {
+            flex: 1;
+        }
 
-      .col7 {
-        flex: 1;
-        margin-right: 10px;
+        .student-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+
+        .student-item > div {
+            flex: 1;
+            text-align: center;
+        }
+
+        .student-item > div:first-child {
+            flex: 0.5;
+        }
+
+        #searchInput {
+            padding: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 30%;
+            font-size: 1.2em;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        #addBtn, #deleteBtn, #emailBtn {
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
        
-      }
 
-      .col8 {
-        flex: 3;
-        margin-right: 10px;
-      
-      }
+        #addBtn {
+            background-color: #4CAF50;
+        }
 
-      .col9 {
-        flex: 1;
-        margin-right: 10px;
-     
-      }
+        #deleteBtn {
+            background-color: #f44336;
+            
+        }
 
-      .col10 {
-        flex: 1;
-        margin-right: 10px;
-      }
+        #emailBtn {
+            background-color: #2196F3;
+        }
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .student-item {
-        padding: 10px;
-        border: 1px solid black;
-        margin-left: 10vw;
-        margin-right: 10vw;
-        margin-top: 5px;
-        display: flex;
-        align-items: center;
-      }
-      
-      .eventsaddition {
-        display: inline-block;
-			padding: 10px 20px;
-            margin-left: 30px;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-right: 10px;
-            margin-left: 80vw;
-    background-color: rosybrown;
+        #studentList {
+            display: flex;
+            flex-direction: column;
+        }
 
-}
-.deletestudent {
-    display: flex;
-			padding: 10px 20px;
-            margin-left: 30px;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-right: 10px;
-            margin-left: 80vw;
-            background-color: rosybrown;
-            margin-top: 10px;
+        .is-placed-true {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
-}
-.sendemail {
-  display: flex;
-			padding: 10px 20px;
-            margin-left: 30px;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-right: 10px;
-            margin-left: 80vw;
-            background-color: darkgray;
-            margin-top: 10px;
-}
+        .is-placed-false {
+            background-color: #f44336;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
 
-input[type="text"]{
-  padding: 5px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  width: 30%;
-  font-size: 1.2em;
-  margin-left: 10vw;
-}
     </style>
   </head>
 
   <body>
     <div class="container">
         <h1 style="font-size: 20px; text-align: center;">Company</h1>
+        <div class="visit-item">
+          <div class="col1">NAME</div>
+          <div class="col2">DESCRIPTION</div>
+          <div class="col3">CTC</div>
+          <div class="col4">JOBPROFILE</div>
+        </div>
       <div id="visitList"></div>
       <h1 style="font-size: 20px; text-align: center;">Students List</h1>
       <input type="text" id="searchInput" placeholder="Search by email">

@@ -1,5 +1,112 @@
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Who Got Placed during Placement Season</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .studentcontainer {
+            width: 90vw;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .student-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+        }
+        
+        .col-label {
+            flex: 1;
+            font-weight: bold;
+            text-align: center;
+            padding-right: 10px;
+        }
+        
+        .col-value {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .col9 {
+            flex: 1;
+        }
+        
+        .col10 {
+            flex: 1;
+        }
+        
+        .col11 {
+            flex: 1;
+        }
+        .studentcontainer:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+        .col12 {
+            flex: 1;
+        }
+
+        #studentList {
+            margin-top: 20px;
+        }
+
+        .not-placed {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        .placed {
+            color: #5cb85c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Students Who Got Placed during Placement Season</h1>
+    <div class="studentcontainer">
+        <div class="student-item">
+            <div class="col9 col-label">ID</div>
+            <div class="col-value col6">STUDENT NAME</div>
+            <div class="col-value col7">ROLL NUMBER</div>
+            <div class="col-value col8">EMAIL</div>
+            <div class="col9 col-label">CGPA</div>
+            <div class="col10 col-label">PRESENT SEMESTER</div>
+            <div class="col11 col-label">IS PLACED</div>
+            <div class="col12 col-label">PLACED COMPANY</div>
+        </div>
+        <div id="studentList"></div>
+    </div>
+    <script src="studentsList.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,59 +114,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         .student-item {
-        padding: 10px;
-        border: 1px solid black;
-        margin-left: 10vw;
-        margin-right: 10vw;
-        margin-top: 5px;
-        display: flex;
-        align-items: center;
-      }
-      .col6 {
-        flex: 2;
-        font-weight: bold;
-    
-      }
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-      .col7 {
-        flex: 1;
-        margin-right: 10px;
-       
-      }
-
-      .col8 {
-        flex: 3;
-        margin-right: 10px;
-      
-      }
-
-      .col9 {
-        flex: 1;
-        margin-right: 10px;
-     
-      }
-
-      .col10 {
-        flex: 1;
-        margin-right: 10px;
-      }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .studentcontainer {
+            width: 90vw;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .student-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+        }
+        
+        .col-label {
+            flex: 1;
+            font-weight: bold;
+            text-align: center;
+            padding-right: 10px;
+        }
+        
+        .col-value {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .col9 {
+            flex: 1;
+        }
+        
+        .col10 {
+            flex: 1;
+        }
+        
+        .col11 {
+            flex: 1;
+        }
+        
+        .col12 {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
-    <h1 style="font-size: 20px; text-align: center;">Eligible Students List</h1>
+    <h1>Students Who Got Placed during Placement Season</h1>
     <div class="studentcontainer">
-      <div class="student-item">
-        <div class="col9">ID</div>
-        <div class="col6">STUDENTNAME</div>
-        <div class="col7">ROLLNUMBER</div>
-        <div class="col8">EMAIL</div>
-        <div class="col9">CGPA</div>
-        <div class="col9">PRESENTSEMESTER</div>
-        <div class="col10">ISPLACED</div>
+        <div class="student-item">
+            <div class="col9 col-label">ID</div>
+            <div class="col-value col6">STUDENT NAME</div>
+            <div class="col-value col7">ROLL NUMBER</div>
+            <div class="col-value col8">EMAIL</div>
+            <div class="col9 col-label">CGPA</div>
+            <div class="col10 col-label">PRESENT SEMESTER</div>
+            <div class="col11 col-label">IS PLACED</div>
+            <div class="col12 col-label">PLACED COMPANY</div>
         </div>
         <div id="studentList"></div>
-        </div>
+    </div>
     <script src="studentsList.js"></script>
 </body>
-</html>
+</html>  -->
+
+
+
+
+
+
+
+
+
+
+

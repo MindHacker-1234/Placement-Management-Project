@@ -54,6 +54,7 @@ completedBtn.addEventListener('click', () => {
       const completedVisits = data.filter(visit => new Date(visit.scheduleDate) < new Date());
       completedVisits.forEach(visit => {
         const visitId = visit.id;
+        const date = visit.scheduleDate;
         const companyName = visit.company.companyName;
         const companyDescription = visit.company.companyDescription;
         const ctc = visit.ctc;
@@ -64,6 +65,7 @@ completedBtn.addEventListener('click', () => {
             <div class="col1">${companyName}</div>
             <div  class="col2">${companyDescription}</div>
             <div class="col3">${ctc}</div>
+            <div class="col4">${date}</div>
             <div class="col4">${jobProfile}</div>
           </div>
         `;
