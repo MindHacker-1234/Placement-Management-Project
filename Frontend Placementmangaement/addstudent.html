@@ -21,6 +21,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: rgba(200, 200, 200, 0.3)
 }
+.error {
+      color: red;
+      font-size: 0.8em;
+      margin-bottom: 10px;
+    }
 
 label {
   display: block;
@@ -53,6 +58,15 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #3e8e41;
+}
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  padding: 20px;
+  background-color: white;
 }
       
         /* #studentForm {

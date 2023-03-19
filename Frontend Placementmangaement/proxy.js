@@ -19,6 +19,6 @@ app.use('/api', createProxyMiddleware({
   }
 }));
 
-app.listen(9000, () => {
+app.listen(143, () => {
   console.log('Proxy server listening on port 9000');
 });

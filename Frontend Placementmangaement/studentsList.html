@@ -10,6 +10,8 @@
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
             color: #333;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
@@ -81,9 +83,78 @@
             color: #5cb85c;
             font-weight: bold;
         }
+        header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+}
+
+nav a img {
+    display: block;
+    height: 15px;
+    margin-bottom: 5px;
+}
+h1 {
+            font-size: 1.6rem;
+            text-align: center;
+            color: white;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px #000000;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Hiring Grad ">
+            <h1>Hiring Grad</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="company.html">Companies</a></li>
+                <li><a href="studentsList.html">Students</a></li>
+                <li><a href="visit.html">Events</a></li>
+                <li><a href="login.html">LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>Students Who Got Placed during Placement Season</h1>
     <div class="studentcontainer">
         <div class="student-item">

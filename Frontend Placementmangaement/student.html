@@ -33,6 +33,7 @@
         }
 
         .visit-item {
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -57,13 +58,15 @@
         }
 
         .student-item {
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border: 1px solid #ccc;
             padding: 10px;
-            margin: 10px 0;
+            margin: 4px ;
             background-color: #fff;
+            
         }
 
         .student-item > div {
@@ -76,41 +79,48 @@
         }
 
         #searchInput {
+            
             padding: 5px;
             border: 2px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            width: 30%;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            width: 20%;
             font-size: 1.2em;
+            margin-left: 72.5vw;
+    
+            
         }
 
         .btn {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
 
         #addBtn, #deleteBtn, #emailBtn {
             padding: 10px 20px;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             margin-left: 50px;
             cursor: pointer;
+
         }
-       
+        .deletestudent {
+            margin-left: 40px;
+        }
 
         #addBtn {
-            background-color: #4CAF50;
+            background-color: darkred;
         }
 
         #deleteBtn {
-            background-color: #f44336;
+            background-color: darkred;
             
         }
 
         #emailBtn {
-            background-color: #2196F3;
+            background-color: darkred;
         }
 
         #studentList {
@@ -131,13 +141,84 @@
             padding: 5px;
             border-radius: 5px;
         }
+        header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+}
+h2 {
+	color: white;
+    font-size: 1.6rem;
+}
+
+nav a img {
+    display: block;
+    height: 20px;
+    margin-bottom: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: end;
+    margin-right: 46px;
+}
 
     </style>
   </head>
 
+
   <body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Hiring Grad ">
+            <h2>Hiring Grad</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="company.html">Companies</a></li>
+                <li><a href="studentsList.html">Students</a></li>
+                <li><a href="visit.html">Events</a></li>
+                <li><a href="login.html">LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <h1 style="font-size: 20px; text-align: center;">Company</h1>
+        <h1 style="font-size: 20px; text-align: center; margin-top: 0;">Company</h1>
         <div class="visit-item">
           <div class="col1">NAME</div>
           <div class="col2">DESCRIPTION</div>
@@ -145,10 +226,10 @@
           <div class="col4">JOBPROFILE</div>
         </div>
       <div id="visitList"></div>
-      <h1 style="font-size: 20px; text-align: center;">Students List</h1>
-      <input type="text" id="searchInput" placeholder="Search by email">
+      <h1 style="font-size: 20px; text-align: center; margin-top: 0;">Students List</h1>
+      <input style="margin-top: 0;"type="text" id="searchInput" placeholder="Search by email">
        <div class="btn">
-      <button id="addBtn" class="eventsaddition">Add Student</button>
+      <button style="margin-top: 0; margin-bottom: 0;" id="addBtn" class="eventsaddition">Add Student</button>
     </div>
     
       <div class="studentcontainer">
@@ -164,8 +245,10 @@
       <div id="studentList"></div>
       </div>
     </div>
+    <div class="buttons">
     <button id="deleteBtn" class="deletestudent">delete Student</button>
     <button id="emailBtn" class="sendemail">send email</button>
+    </div>
   </body>
   <script src="student.js"></script>
 </html>

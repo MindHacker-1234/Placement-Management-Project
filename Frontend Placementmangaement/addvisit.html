@@ -1,21 +1,22 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
        body {
-      background-color: darkgray;
+      background-color: white;
       /* background-image: url(formbg.jpg);
       background-size: cover;
       background-repeat: no-repeat; */
     }
 
     #visitForm {
-      background-image: url(formbg.jpg);
+    
       background-size: cover;
       background-repeat: no-repeat;
       display: flex;
@@ -86,65 +87,16 @@
     input[type="submit"]:hover {
       background-color: #3e8e41;
     }
+ 
         
-/* #visitForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-  }
-  .error {
-  color: red;
-  font-size: 0.8em;
-  margin-bottom: 10px;
-}
-
-  label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="date"] {
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 50%;
-    font-size: 1.2em;
-    background-color: white;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  }
-
-  input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-  }
-
-  input[type="submit"]:hover {
-    background-color: #3e8e41;
-  } */
     </style>
 </head>
 <body>
+ 
 
     <form id="visitForm">
       <h1 style="text-align: center; font-size: 30px;">Add Event Details</h1>
-        <!-- <label for="id">ID:</label>
-        <input type="number" id="id" name="id"><br> -->
-      
-        <!-- <label for="driveId">Drive ID:</label>
-        <input type="number" id="driveId" name="driveId"><br> -->
-<!--       
-        <label for="driveName">Drive Name:</label>
-        <input type="text" id="driveName" name="driveName"><br> -->
+    
         <label for="driveName">Drive Name:</label>
         <input type="text" id="driveName" name="driveName">
         <span class="error" id="driveNameError"></span>
@@ -163,26 +115,13 @@
       
         <label for="companyId">Company ID:</label>
         <input type="number" id="companyId" name="companyId"><br>
-        <span class="error" id="companyIdError"></span>
+        <span class="error" id="companyIdError"></span> 
       
-        <!-- <label for="companyName">Company Name:</label>
-        <input type="text" id="companyName" name="companyName"><br>
-      
-        <label for="companyDescription">Company Description:</label>
-        <input type="text" id="companyDescription" name="companyDescription"><br>
-      
-      
-        <label for="placementOfficer">Placement Officer:</label>
-        <input type="text" id="placementOfficer" name="placementOfficer"><br>
-      
-        <label for="contact">Contact:</label>
-        <input type="text" id="contact" name="contact"><br>
-      
-        <label for="applicableBranches">Applicable Branches:</label>
-        <input type="text" id="applicableBranches" name="applicableBranches"><br> -->
       
         <input type="submit" value="Submit">
       </form>
+    </div>
+  </div>
     <script src="addvisit.js"></script>
 </body>
-</html>
+</html>    

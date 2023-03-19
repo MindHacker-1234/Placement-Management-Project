@@ -3,54 +3,155 @@
 <html>
 <head>
   <title>Pie Chart Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+nav a img {
+    display: block;
+    height: 20px;
+    margin-bottom: 5px;
+}
+h1 {
+            font-size: 1.6rem;
+            text-align: center;
+            color: white;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px #000000;
+        }
+  </style>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-     google.charts.load('current', {'packages':['corechart']});
+    google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawCharts);
-     
-     
+
     function drawChart() {
-      fetch('http://localhost:8080/Placement/visit/display')
-      .then(response => response.json())
-      .then(data => {
-      
-        const ctcValues = {};
+  fetch('http://localhost:8080/Placement/visit/display')
+    .then(response => response.json())
+    .then(data => {
+      const companyData = {};
+      data.forEach(visit => {
+        const companyName = visit.company.companyName;
+        const ctc = visit.ctc;
 
-        data.forEach(visit => {
-        
-          const ctc = visit.ctc;
-          
-          if (ctcValues[ctc]) {
-            ctcValues[ctc]++;
-          } else {
-            ctcValues[ctc] = 1;
-          }
-        });
+        if (!companyData[companyName]) {
+          companyData[companyName] = {};
+        }
 
-       
+        if (companyData[companyName][ctc]) {
+          companyData[companyName][ctc]++;
+        } else {
+          companyData[companyName][ctc] = 1;
+        }
+      });
 
-        const ctcData = [['CTC', 'Count']];
+      const ctcData = [['Company', 'CTC']];
+      Object.entries(companyData).forEach(([companyName, ctcValues]) => {
         Object.entries(ctcValues).forEach(([ctc, count]) => {
-          ctcData.push([ctc, count]);
+          ctcData.push([`${companyName} (${ctc})`, count]);
         });
+      });
 
-        const options = {
-          title: 'Visits by Job Profile',
-          width: 600,
-          height: 550,
-          
-        };
+      const options = {
+        title: 'Companies Grouped Based On CTC',
+        width: 600,
+        height: 550,
+      };
 
-        options.title = 'The Number Of Companies Which Are Offering Similar CTC';
+      const ctcChart = new google.visualization.PieChart(document.getElementById('ctcChart'));
+      ctcChart.draw(google.visualization.arrayToDataTable(ctcData), options);
+    })
+    .catch(error => console.error(error));
+}
+     
+  //   function drawChart() {
+  //    fetch('http://localhost:8080/Placement/visit/display')
+  //   .then(response => response.json())
+  //    .then(data => {
+    
+  //      const ctcValues = {};
 
-        const ctcChart = new google.visualization.PieChart(document.getElementById('ctcChart'));
-        ctcChart.draw(google.visualization.arrayToDataTable(ctcData), options);
-      })
-      .catch(error => console.error(error));
-    }
+  //      data.forEach(visit => {
+      
+  //        const ctc = visit.ctc;
+        
+  //        if (ctcValues[ctc]) {
+  //          ctcValues[ctc]++;
+  //        } else {
+  //         ctcValues[ctc] = 1;
+  //       }
+  //     });
+
+     
+
+  //     const ctcData = [['CTC', 'Count']];
+  //      Object.entries(ctcValues).forEach(([ctc, count]) => {
+  //        ctcData.push([ctc, count]);
+  //      });
+
+  //     const options = {
+  //        title: 'Visits by Job Profile',
+  //        width: 600,
+  //       height: 550,
+        
+  //      };
+
+  //     options.title = 'The Number Of Companies Which Are Offering Similar CTC';
+
+  //      const ctcChart = new google.visualization.PieChart(document.getElementById('ctcChart'));
+  //     ctcChart.draw(google.visualization.arrayToDataTable(ctcData), options);
+  //   })
+  //    .catch(error => console.error(error));
+  // }
+
+  
     function drawCharts() {
   fetch('http://localhost:8080/Placement/placement/display')
     .then(response => response.json())
@@ -88,17 +189,32 @@
 
   </script>
 </head>
-<body style="background-color: aliceblue;">
-  <div style="display: flex; gap: 50px;">
+<body style="background-color: aliceblue;  overflow-x: hidden;">
+  <header>
+    <div class="logo">
+        <img src="logo.jpg" alt="Hiring Grad ">
+        <h1>Hiring Grad</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="company.html">Companies</a></li>
+            <li><a href="studentsList.html">Students</a></li>
+            <li><a href="visit.html">Events</a></li>
+            <li><a href="login.html">LogOut</a></li>
+        </ul>
+    </nav>
+</header>
+  <div style="display: flex; gap: 30px;">
  
-  <div style="margin-left: 30px;"id = "ctcChart"></div>
-  <div id="placementChart"></div>
+  <div style="margin-left: 20px;"id = "ctcChart"></div>
+  <div style="margin-right: 20px;"id="placementChart"></div>
 
   </div>
 </body>
 </html>
 
-
+ 
 
 
 
