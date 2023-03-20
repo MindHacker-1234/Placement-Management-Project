@@ -13,37 +13,37 @@ const studentList = document.getElementById('studentList');
 // deleteBtn.addEventListener('click', () => {
 //   window.location.href = 'deletestudent.html';
 // });
-const emailBtn = document.getElementById('emailBtn');
-emailBtn.addEventListener('click', () => {
-  fetch(`http://localhost:8080/Placement/student/display`)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(student => {
-        const email = student.email;
-        const message = {
-          "From": "virri.praneeth@wavemaker.com",
-          "To": email,
-          "Subject": "Regarding placement",
-          "TextBody": "You are still eligible to apply for companies"
-        };
-        fetch('http://localhost:143/email', {
-          method: 'POST',
-          mode: 'cors',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'X-Postmark-Server-Token': 'bebaa614-d55b-4119-822a-d52574d48e93'
-          },
-          body: JSON.stringify(message)
-        })
-        .then(response => console.log(`Email sent to ${email}: ${response.status} ${response.statusText}`))
-        .catch(error => console.error(`Error sending email to ${email}: ${error}`));
-      });
+// const emailBtn = document.getElementById('emailBtn');
+// emailBtn.addEventListener('click', () => {
+//   fetch(`http://localhost:8080/Placement/student/display`)
+//     .then(response => response.json())
+//     .then(data => {
+//       data.forEach(student => {
+//         const email = student.email;
+//         const message = {
+//           "From": "virri.praneeth@wavemaker.com",
+//           "To": email,
+//           "Subject": "Regarding placement",
+//           "TextBody": "You are still eligible to apply for companies"
+//         };
+//         fetch('http://localhost:143/email', {
+//           method: 'POST',
+//           mode: 'cors',
+//           headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json',
+//             'X-Postmark-Server-Token': 'bebaa614-d55b-4119-822a-d52574d48e93'
+//           },
+//           body: JSON.stringify(message)
+//         })
+//         .then(response => console.log(`Email sent to ${email}: ${response.status} ${response.statusText}`))
+//         .catch(error => console.error(`Error sending email to ${email}: ${error}`));
+//       });
   
-      // alert("Emails have been sent to all the students.");
-    })
-    .catch(error => console.error(error));
-});
+//       // alert("Emails have been sent to all the students.");
+//     })
+//     .catch(error => console.error(error));
+// });
 
 
 
@@ -393,6 +393,7 @@ function openDialog1() {
     </head>
     <body>
       <form id="studentForm">
+      <h1>Enter Student Id</h1>
         <label for="id">ID:</label>
         <input type="number" id="id" name="id">
         <br>

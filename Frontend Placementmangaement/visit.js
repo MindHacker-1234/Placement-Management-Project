@@ -201,7 +201,12 @@ function openDialog() {
   </form>
   </body>
   `;
-  
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+      dialog.remove();
+    }
+  });
   // Add the dialog box to the page
   document.body.appendChild(dialog);
 
@@ -274,6 +279,7 @@ return;
   }
     
   };
+  dialog.remove();
   console.log(data);
   fetch('http://localhost:8080/Placement/visit/create', {
     method: 'POST',
