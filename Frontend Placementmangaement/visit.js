@@ -75,12 +75,20 @@ completedBtn.addEventListener('click', () => {
     .catch(error => console.error(error));
 });
 // var visitItem = document.getElementsByClassName("visit-item")[0];
+// visitList.addEventListener('click', event => {
+//   const target = event.target;
+//   if (target.classList.contains('col5')) {
+//     // const visitId = target.parentElement.querySelector('.col1').textContent;
+//     // window.location.href = `http://127.0.0.1:5500/student.html?visitid=${visitId}`;
+//     const visitId = target.parentElement.querySelector('.col5').textContent;
+//     sessionStorage.setItem('visitId', visitId);
+//     window.location.href = 'http://127.0.0.1:5500/student.html';
+//   }
+// });
 visitList.addEventListener('click', event => {
   const target = event.target;
-  if (target.classList.contains('col5')) {
-    // const visitId = target.parentElement.querySelector('.col1').textContent;
-    // window.location.href = `http://127.0.0.1:5500/student.html?visitid=${visitId}`;
-    const visitId = target.parentElement.querySelector('.col5').textContent;
+  if (target.closest('.visit-item')) {
+    const visitId = target.closest('.visit-item').querySelector('.col5').textContent;
     sessionStorage.setItem('visitId', visitId);
     window.location.href = 'http://127.0.0.1:5500/student.html';
   }

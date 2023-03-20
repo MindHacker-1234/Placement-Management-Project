@@ -26,7 +26,7 @@ const studentList = document.getElementById('studentList');
 //           "Subject": "Regarding placement",
 //           "TextBody": "You are still eligible to apply for companies"
 //         };
-//         fetch('http://localhost:143/email', {
+//         fetch('http://localhost:25/email', {
 //           method: 'POST',
 //           mode: 'cors',
 //           headers: {

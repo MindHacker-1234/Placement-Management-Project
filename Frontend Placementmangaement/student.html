@@ -30,17 +30,23 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+          
         }
 
         .visit-item {
-            border-radius: 20px;
+            /* border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border: 1px solid #ccc;
             padding: 10px;
             margin: 10px 0;
-            background-color: #fff;
+            background-color: #fff; */
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
         }
 
         .col1 {
@@ -57,7 +63,7 @@
             flex: 1;
         }
 
-        .student-item {
+        /* .student-item {
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -66,6 +72,14 @@
             padding: 10px;
             margin: 4px ;
             background-color: #fff;
+            
+        } */
+        .student-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
             
         }
 
@@ -197,7 +211,36 @@ nav a img {
     justify-content: end;
     margin-right: 46px;
 }
+.studentcontainer {
 
+            width: 90vw;
+            margin: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .studentcontainer:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.companycontainer {
+
+    width: 90vw;
+            margin: 0 auto;
+            padding: 15px;
+            /* padding-top: 20px;
+            padding-bottom: 20px; */
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            overflow: hidden;
+
+}
+.companycontainer:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
     </style>
   </head>
 
@@ -221,22 +264,24 @@ nav a img {
     </header>
     <div class="container">
         <h1 style="font-size: 20px; text-align: center; margin-top: 0;">Company</h1>
+        <div class="companycontainer">
         <div class="visit-item">
-          <div class="col1">NAME</div>
-          <div class="col2">DESCRIPTION</div>
-          <div class="col3">CTC</div>
-          <div class="col4">JOBPROFILE</div>
+          <div style="font-weight: bold;" class="col1">NAME</div>
+          <div style="font-weight: bold;" class="col2">DESCRIPTION</div>
+          <div style="font-weight: bold;" class="col3">CTC</div>
+          <div style="font-weight: bold;" class="col4">JOBPROFILE</div>
         </div>
       <div id="visitList"></div>
-      <h1 style="font-size: 20px; text-align: center; margin-top: 0;">Students List</h1>
+        </div>
+      <h1 style="font-size: 20px; text-align: center; margin-top: 9px;">Students List</h1>
       <input style="margin-top: 0;"type="text" id="searchInput" placeholder="Search by email">
        <div class="btn">
       <button style="margin-top: 0; margin-bottom: 0;" id="addBtn" class="eventsaddition">Add Student</button>
     </div>
     
       <div class="studentcontainer">
-        <div class="student-item">
-        <div class="col9">ID</div>
+        <div style="font-weight: bold;" class="student-item">
+        <div  class="col9">ID</div>
         <div class="col6">STUDENTNAME</div>
         <div class="col7">ROLLNUMBER</div>
         <div class="col8">EMAIL</div>
