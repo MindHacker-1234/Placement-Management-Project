@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="css/all.min.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Hiring Grad</title>
+    <style>
+         body {
+            /* background: linear-gradient(to bottom right, #4B0082, #191970); */
+            background-color: #f2f2f2;
+            font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+        }
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    padding-right: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+nav a img {
+    display: block;
+    height: 20px;
+    margin-bottom: 5px;
+}
+h1 {
+            font-size: 1.6rem;
+            text-align: center;
+            color: white;
+            margin: 1rem 0;
+            text-shadow: 5px 5px 5px black;
+        }
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+/* Style for col4 */
+.col4 {
+  flex: 0 0 calc(33.33% - 30px);
+  max-width: calc(33.33% - 30px);
+  padding: 0 15px;
+}
+
+/* Style for company-container */
+.company-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 20px;
+  margin-left: 10px;
+}
+
+/* Style for company-info */
+.company-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Style for image-container */
+.image-container {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* Style for image */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style for branches-officer-container */
+.branches-officer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for branches */
+.branches {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: green;
+}
+
+/* Style for placement-officer */
+.placement-officer {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Style for company-description */
+.company-description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.empty-container {
+  width: calc(25% - 30px);
+  height: 210px;
+  margin-left: 30px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.empty-symbol {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.empty-symbol::before,
+.empty-symbol::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: black;
+}
+
+.empty-symbol::before {
+  width: 100%;
+  top: 50%;
+  left: 0;
+}
+
+.empty-symbol::after {
+  width: 2px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+p {
+margin-left: 20px;
+}
+button {
+       display: flex;
+       justify-content: end;
+       border: 1px solid black;
+       color: white;
+       width: 8%;
+       height: 10%;
+       margin-right: 20px;
+       padding: 5px;
+       border-radius: 10px;
+
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="JpgImages/logo.jpg" alt="Hiring Grad ">
+            <h1>Hiring Grad</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">DashBoard</a></li>
+                <li><a href="company.html">Companies</a></li>
+                <li><a href="studentsList.html">Students</a></li>
+                <li><a href="visit.html">Events</a></li>
+                <li><a href="login.html">LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div id="company-list">
+            <h1 style="font-size: 20px; text-align: center; color: black;  text-shadow: 5px 5px 5px white;">COMPANIES VISTING CAMPUS  FOR PLACEMENT</h1>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="margin-left: 20px;">Companies <span id="company-count"></span></p>
+                <button style="background-color: green;" id="addCompany">Add Company</button>
+        </div>
+        
+       <script src="JavaScriptFiles/company.js"></script>
+    </main>
+</body>
+</html>
+
+
+
+
