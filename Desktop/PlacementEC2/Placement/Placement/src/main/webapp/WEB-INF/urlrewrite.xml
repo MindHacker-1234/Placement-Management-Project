@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+    <rule>
+        <from>index</from>
+        <to>/index.html</to>
+   </rule>
+    <rule>
+        <from>firms</from>
+        <to>/company.html</to>
+    </rule>
+    <rule>
+        <from>dashboard</from>
+        <to>/dashboard.html</to>
+    </rule>
+    <rule>
+        <from>graduate</from>
+        <to>/student.html</to>
+    </rule>
+    <rule>
+        <from>scholars</from>
+        <to>/studentsList.html</to>
+    </rule>
+    <rule>
+        <from>Events</from>
+        <to>/visit.html</to>
+    </rule>
+
+
+</urlrewrite>

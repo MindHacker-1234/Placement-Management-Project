@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upcoming and Completed Visits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+	<style>
+		body {
+font-family: 'Open Sans', sans-serif;
+       font-weight: 400;
+		margin: 0;
+	}
+
+	h1 {
+		text-align: center;
+		margin-top: 30px;
+		color: black;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 10px 20px;
+		/* margin-left: 30px; */
+		background-color: #8B0000;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		/* margin-right: 10px; */
+		/* margin-left: 300px; */
+		transition: all 0.3s ease;
+		
+	}
+
+	.btn:hover {
+		background-color: cornflowerblue;
+	}
+
+	.btn1 {
+		display: inline-block;
+		padding: 10px;
+		/* margin-left: 30vw; */
+		background-color: darkred;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		/* margin-right: 10px; */
+		transition: all 0.3s ease;
+	
+	}
+
+	.btn1:hover {
+		background-color: cornflowerblue;
+	}
+
+	.eventsaddition {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-left: 30px;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		margin-right: 10px;
+		margin-left: 600px;
+		background-color: darkred;
+		transition: all 0.3s ease;
+		
+	}
+
+	.eventsaddition:hover {
+		background-color: cornflowerblue;
+	}
+
+	.visit-item {
+		
+		display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1.5px solid #ccc;
+            font-size: 16px;
+	}
+
+	.visit-item:hover {
+		background-color: #F5F5F5;
+	}
+
+	.col1 {
+	
+		flex: 1;
+		padding-left: 1px;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.col2 {
+		flex: 5;
+		width: 40vw;
+		margin-left: 30px;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.col3 {
+		flex: 2;
+		margin-left: 5px;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.col4 {
+		flex: 3;
+		margin-right: 10px;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.col-md-4 {
+		margin-bottom: 10px;
+		margin-left: 0;
+		text-align: center;
+		padding: 10px;
+		border-radius: 5px;
+	} 
+
+	.row {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#visitList {
+		margin-top: 20px;
+	}
+	.col5 {
+		flex: 1;
+		padding-left: 1px;
+		text-align: center;
+	}
+
+	.col6 {
+		flex: 2;
+		width: 40vw;
+		margin-right: 10px;
+		text-align: center;
+	}
+
+	.col7 {
+		flex: 6;
+		width: 40vw;
+	
+		text-align: center;
+	
+	}
+
+	.col8 {
+		flex: 1;
+	
+	
+		text-align: center;
+
+	}
+	.col9 {
+		flex: 4;
+		margin-right: 10px;
+		text-align: center;
+	}
+	.col10 {
+		flex: 3;
+       
+		text-align: center;
+	
+	}
+	header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+	padding-right: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+nav a img {
+    display: block;
+    height: 20px;
+    margin-bottom: 5px;
+}
+h2 {
+	color: white;
+	font-size: 1.6rem;
+}
+.btn-row {
+	border: 0;
+	padding: 10px;
+	margin-bottom: 10px;
+
+}
+.col {
+	margin-left: 30px;
+}
+#modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+#modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#visitList {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.card {
+  width: 49vw;
+  margin-bottom: 10px;
+  font-family: inter;
+
+}
+
+.visitid {
+	opacity: 0;
+}
+.company-card {
+
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: space-between; */
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-width: 600px;
+  margin-left: 1vw;
+  background-color: white;
+}
+
+.company-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.company-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.company-details {
+	margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.company-details .job-profile-date {
+ display: flex;
+ flex-direction: row;
+  margin-bottom: 1px;
+  color: green;
+}
+
+.company-details .job-profile {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.company-details .schedule-date {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.company-details .company-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: green;
+}
+
+.company-details .ctc {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: green;
+}
+
+.company-details .company-description {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.company-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+
+    
+
+	</style>
+</head>
+<body>
+	<header>
+        <div class="logo">
+            <img src="JpgImages/logo.jpg" alt="Hiring Grad ">
+            <h2>Hiring Grad</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index">Home</a></li>
+				<li><a href="dashboard">DashBoard</a></li>
+                <li><a href="firms">Companies</a></li>
+                <li><a href="scholars">Students</a></li>
+                <li><a href="Events">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+	<div class="container">
+		<h1>Upcoming and Completed Events</h1>
+    </div>
+		<div class="row">
+			<div class="btn-row">
+			<button style="background-color: #3667E7;" class="btn" class="col-md-4" id="upcomingBtn">Upcoming Events</button>
+			</div>
+			<div class="btn-row">
+			<button style="  background-color: #3667E7;"class="btn1" class="col-md-4" id="completedBtn">Completed Events</button>
+			</div>
+            <button style="background-color: #3667E7; color: white;" id="addBtn" class="col-md-4" id="openModal">Add Event</button>
+        </div>
+			
+             
+        <div id="visitList">
+			<div class="visit-item">
+
+        </div>
+	</div>
+    <script src="JavaScriptFiles/event.js"></script>
+</body>
+</html>
